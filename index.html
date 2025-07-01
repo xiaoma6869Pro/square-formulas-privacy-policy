@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Square Formulas Exercise</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
+            color: #1d1d1f;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .header {
+            background: linear-gradient(135deg, #4c1d95 0%, #6b46c1 50%, #8b5cf6 100%);
+            padding: 60px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .app-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            border-radius: 18px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            color: white;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .header h1 {
+            color: white;
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            position: relative;
+            z-index: 1;
+            letter-spacing: -0.5px;
+        }
+
+        .header p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 20px;
+            font-weight: 400;
+            position: relative;
+            z-index: 1;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .content {
+            padding: 50px 40px;
+        }
+
+        .privacy-summary {
+            background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 40px;
+            border: 1px solid #a7f3d0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .privacy-summary::before {
+            content: '🔒';
+            font-size: 48px;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            opacity: 0.6;
+        }
+
+        .privacy-summary h2 {
+            color: #065f46;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .privacy-summary h2::before {
+            content: '✓';
+            background: #10b981;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .privacy-summary p {
+            color: #047857;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 1.6;
+        }
+
+        .section {
+            margin-bottom: 48px;
+        }
+
+        .section h2 {
+            color: #4c1d95;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid #e5e7eb;
+            position: relative;
+        }
+
+        .section h2::before {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(135deg, #6b46c1, #8b5cf6);
+            border-radius: 2px;
+        }
+
+        .section h3 {
+            color: #6b46c1;
+            font-size: 22px;
+            font-weight: 600;
+            margin: 32px 0 16px;
+        }
+
+        .section p {
+            margin-bottom: 20px;
+            font-size: 16px;
+            line-height: 1.7;
+            color: #374151;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            border-left: 4px solid #3b82f6;
+            padding: 24px;
+            margin: 24px 0;
+            border-radius: 12px;
+            border: 1px solid #bfdbfe;
+        }
+
+        .highlight-box.success {
+            background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+            border-left-color: #10b981;
+            border-color: #a7f3d0;
+        }
+
+        .highlight-box.warning {
+            background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+            border-left-color: #f59e0b;
+            border-color: #fcd34d;
+        }
+
+        .highlight-box strong {
+            color: #1f2937;
+            font-weight: 600;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin: 32px 0;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 16px;
+            padding: 28px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid #f3f4f6;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #6b46c1, #8b5cf6);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .feature-card h4 {
+            color: #4c1d95;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .feature-card p {
+            color: #6b7280;
+            font-size: 15px;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .icon {
+            width: 24px;
+            height: 24px;
+            background: linear-gradient(135deg, #6b46c1, #8b5cf6);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 48px 0;
+            border: 1px solid #e2e8f0;
+            text-align: center;
+        }
+
+        .contact-section h3 {
+            color: #1e293b;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .contact-section p {
+            color: #64748b;
+            font-size: 16px;
+            margin-bottom: 24px;
+        }
+
+        .contact-info {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: white;
+            padding: 16px 24px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e2e8f0;
+            text-decoration: none;
+            color: #4c1d95;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .contact-info:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+            color: #6b46c1;
+        }
+
+        .footer {
+            background: #1f2937;
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .footer p {
+            margin: 8px 0;
+            color: #d1d5db;
+            font-size: 14px;
+        }
+
+        .footer .app-name {
+            color: #8b5cf6;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        ul {
+            margin: 20px 0;
+            padding-left: 0;
+        }
+
+        li {
+            list-style: none;
+            padding: 8px 0;
+            padding-left: 32px;
+            position: relative;
+            color: #374151;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            color: #10b981;
+            font-weight: bold;
+            width: 20px;
+            height: 20px;
+            background: #ecfdf5;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .header {
+                padding: 40px 24px;
+            }
+
+            .header h1 {
+                font-size: 32px;
+            }
+
+            .header p {
+                font-size: 18px;
+            }
+
+            .content {
+                padding: 32px 24px;
+            }
+
+            .privacy-summary {
+                padding: 24px;
+            }
+
+            .section h2 {
+                font-size: 24px;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-section {
+                padding: 28px 20px;
+            }
+
+            .footer {
+                padding: 28px 20px;
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .container {
+                background: rgba(17, 24, 39, 0.95);
+                color: #f9fafb;
+            }
+
+            .section p, li {
+                color: #d1d5db;
+            }
+
+            .feature-card {
+                background: #374151;
+                border-color: #4b5563;
+            }
+
+            .feature-card p {
+                color: #d1d5db;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="app-icon">∑²</div>
+            <h1>Privacy Policy</h1>
+            <p>Square Formulas Exercise - Your privacy is our priority</p>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+            <!-- Privacy Summary -->
+            <div class="privacy-summary">
+                <h2>Complete Privacy Protection</h2>
+                <p><strong>Square Formulas Exercise</strong> is a completely offline educational app. We don't collect, store, track, or transmit any of your personal data. Your mathematical learning journey remains completely private on your device.</p>
+            </div>
+
+            <!-- App Description -->
+            <div class="section">
+                <h2>About Square Formulas Exercise</h2>
+                <p><strong>Square Formulas Exercise</strong> is an educational mathematics app designed to help students master algebraic formulas through interactive practice and problem-solving. The app features:</p>
+                
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h4><span class="icon">📚</span>11 Formula Types</h4>
+                        <p>Master everything from perfect squares to cube formulas with comprehensive coverage of algebraic expressions.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4><span class="icon">🎯</span>Practice Mode</h4>
+                        <p>Generate unlimited random questions with step-by-step explanations and progress tracking.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4><span class="icon">🔧</span>Solver Mode</h4>
+                        <p>Input your own homework problems and get instant solutions with detailed explanations.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4><span class="icon">📊</span>Progress Tracking</h4>
+                        <p>Monitor your learning progress with detailed statistics and success rates.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Information We DON'T Collect -->
+            <div class="section">
+                <h2>Information We DON'T Collect</h2>
+                <div class="highlight-box success">
+                    <p><strong>Square Formulas Exercise is completely offline and collects ZERO data.</strong></p>
+                </div>
+                
+                <p>Since this is an offline educational app, we have no capability to collect, access, or transmit any information including:</p>
+                
+                <ul>
+                    <li><strong>Personal Information:</strong> No names, emails, phone numbers, or contact details</li>
+                    <li><strong>Educational Data:</strong> No answers, scores, or learning progress</li>
+                    <li><strong>Mathematical Input:</strong> No formulas, equations, or problems you solve</li>
+                    <li><strong>Device Information:</strong> No device IDs, location data, or technical specifications</li>
+                    <li><strong>Usage Analytics:</strong> No tracking of app usage, time spent, or feature interactions</li>
+                    <li><strong>Behavioral Data:</strong> No learning patterns, preferences, or study habits</li>
+                    <li><strong>Network Data:</strong> No IP addresses, cookies, or web tracking</li>
+                </ul>
+            </div>
+
+            <!-- How Your Data Stays Private -->
+            <div class="section">
+                <h2>How Your Data Stays Private</h2>
+                
+                <h3>🔒 Offline-First Design</h3>
+                <div class="highlight-box">
+                    <p><strong>Complete Local Processing:</strong> All mathematical calculations, formula solving, and progress tracking happen entirely on your device. No internet connection is required or used for core functionality.</p>
+                </div>
+
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h4><span class="icon">📱</span>Local Storage Only</h4>
+                        <p>Your app preferences, saved problems, and learning progress are stored only on your device using secure local storage.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4><span class="icon">🚫</span>No Network Permissions</h4>
+                        <p>The app doesn't request internet permissions, ensuring no data can be transmitted externally.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4><span class="icon">🔐</span>No Third-Party Services</h4>
+                        <p>No analytics, advertising networks, cloud storage, or external services are integrated.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4><span class="icon">✨</span>No Account Required</h4>
+                        <p>Start learning immediately without creating accounts, providing emails, or any registration.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Data You Control -->
+            <div class="section">
+                <h2>Data You Control</h2>
+                <p>Any data created by the app remains completely under your control:</p>
+                
+                <h3>What's Stored Locally:</h3>
+                <ul>
+                    <li><strong>App Settings:</strong> Your preferred difficulty levels, formula types, and display options</li>
+                    <li><strong>Practice History:</strong> Your solved problems, scores, and progress statistics (stored locally only)</li>
+                    <li><strong>Saved Problems:</strong> Formulas and equations you choose to save for later review</li>
+                    <li><strong>Learning Progress:</strong> Success rates and performance metrics for self-assessment</li>
+                </ul>
+
+                <h3>Your Control Options:</h3>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h4><span class="icon">👀</span>View Your Data</h4>
+                        <p>All your data is visible within the app's interface - no hidden data collection.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4><span class="icon">🗑️</span>Delete Anytime</h4>
+                        <p>Clear your progress, reset statistics, or delete saved problems whenever you want.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4><span class="icon">📤</span>Export Options</h4>
+                        <p>Save your solved problems or export your progress for personal use.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4><span class="icon">🔄</span>Complete Removal</h4>
+                        <p>Uninstalling the app completely removes all stored data from your device.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Educational Use -->
+            <div class="section">
+                <h2>Safe for Educational Environments</h2>
+                <div class="highlight-box success">
+                    <p><strong>COPPA & FERPA Compliant:</strong> Square Formulas Exercise is safe for students of all ages, including children under 13, as no personal data is collected.</p>
+                </div>
+
+                <h3>Perfect for:</h3>
+                <ul>
+                    <li><strong>Schools & Classrooms:</strong> No privacy concerns for educational institutions</li>
+                    <li><strong>Homeschooling:</strong> Parents can be confident in their children's data privacy</li>
+                    <li><strong>Tutoring Centers:</strong> Safe for use with multiple students</li>
+                    <li><strong>Individual Learning:</strong> Private study sessions without data tracking</li>
+                </ul>
+            </div>
+
+            <!-- App Store Compliance -->
+            <div class="section">
+                <h2>App Store Privacy Standards</h2>
+                <p>Square Formulas Exercise meets the highest privacy standards required by the App Store:</p>
+                
+                <div class="highlight-box">
+                    <p><strong>Privacy Nutrition Label:</strong> Our App Store listing clearly shows "No Data Collected" across all categories, ensuring complete transparency about our privacy practices.</p>
+                </div>
+
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h4><span class="icon">🏷️</span>Transparent Labeling</h4>
+                        <p>App Store privacy labels clearly indicate no data collection across all categories.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4><span class="icon">🔍</span>Regular Reviews</h4>
+                        <p>Apple's review process verifies our privacy claims and offline functionality.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4><span class="icon">📋</span>Policy Updates</h4>
+                        <p>Any changes to privacy practices will be clearly communicated through app updates.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4><span class="icon">⚖️</span>Legal Compliance</h4>
+                        <p>Full compliance with international privacy laws including GDPR, CCPA, and COPPA.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technical Implementation -->
+            <div class="section">
+                <h2>Technical Privacy Implementation</h2>
+                
+                <h3>Security by Design:</h3>
+                <ul>
+                    <li><strong>No Network Code:</strong> App architecture eliminates any data transmission capabilities</li>
+                    <li><strong>Local Encryption:</strong> Sensitive app data is encrypted using iOS security frameworks</li>
+                    <li><strong>Sandboxed Storage:</strong> All data remains within the app's secure sandbox environment</li>
+                    <li><strong>Memory Safety:</strong> No data persistence beyond app lifecycle without explicit user action</li>
+                </ul>
+            </div>
+
+            <!-- International Compliance -->
+            <div class="section">
+                <h2>International Privacy Compliance</h2>
+                <p>Our privacy-by-design approach ensures compliance with privacy laws worldwide:</p>
+                
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h4><span class="icon">🇪🇺</span>GDPR (Europe)</h4>
+                        <p>Full compliance with European data protection regulations through zero data collection.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4><span class="icon">🇺🇸</span>CCPA (California)</h4>
+                        <p>Meets California Consumer Privacy Act requirements by design.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4><span class="icon">👶</span>COPPA (Children)</h4>
+                        <p>Safe for children under 13 with no data collection or online interactions.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4><span class="icon">🏫</span>FERPA (Education)</h4>
+                        <p>Compliant with educational privacy requirements for school use.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Policy Updates -->
+            <div class="section">
+                <h2>Privacy Policy Updates</h2>
+                <div class="highlight-box warning">
+                    <p><strong>Commitment to Privacy:</strong> Given our offline-first design, this privacy policy is unlikely to change. Any modifications would only occur if we add optional online features, which would be clearly disclosed and require explicit user consent.</p>
+                </div>
+                
+                <p>If we ever update this policy:</p>
+                <ul>
+                    <li>Users will be notified through the app before any changes take effect</li>
+                    <li>Updated policy will be posted on our website and in the app</li>
+                    <li>Changes will only enhance privacy protection, never reduce it</li>
+                    <li>Users maintain full control over their participation in any new features</li>
+                </ul>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="contact-section">
+                <h3>Questions About Your Privacy?</h3>
+                <p>We're committed to transparency and happy to address any privacy concerns about Square Formulas Exercise.</p>
+                <a href="mailto:privacy@squareformulas.app" class="contact-info">
+                    <span class="icon">✉️</span>
+                    privacy@squareformulas.app
+                </a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p class="app-name">Square Formulas Exercise</p>
+            <p>Privacy-First Educational Mathematics App</p>
+            <p>Last Updated: January 2, 2025</p>
+            <p>Version 1.0 - Offline App Privacy Policy</p>
+        </div>
+    </div>
+</body>
+</html>
